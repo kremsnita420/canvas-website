@@ -1,5 +1,5 @@
 .header-wrapper {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 999;
@@ -10,7 +10,7 @@
 		background-color: $color-black;
 	}
 }
-
+// ! Header
 .header {
 	display: flex;
 	align-items: center;
@@ -70,6 +70,42 @@
 		@include respond(tab-port) {
 			display: block;
 			cursor: pointer;
+			padding: 1rem;
+			margin-right: 2rem;
+		}
+	}
+}
+
+// ! Mobile navigation
+.mobile-nav {
+	display: none;
+	flex-direction: column;
+	width: 100%;
+
+	// * media queries
+	@include respond(tab-port) {
+		display: flex;
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__list-item {
+		border-bottom: 1px solid $color-grey-dark-3;
+	}
+
+	&__list-item-link {
+		display: block;
+		font-family: 'PT Serif', serif;
+		line-height: 2.2rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: inherit;
+		padding: 1.4rem 0.5rem;
+
+		&:hover {
+			@extend %linearPinkFont;
 		}
 	}
 }

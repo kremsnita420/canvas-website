@@ -1,8 +1,5 @@
 .section-hero {
-	position: absolute;
-	top: 0;
-	left: 0;
-
+	position: relative;
 	min-width: 100vw;
 	min-height: 100vh;
 	background-image: linear-gradient(
@@ -14,15 +11,10 @@
 	background-size: cover;
 	margin: auto;
 	background-position: top;
+	overflow-x: hidden;
 
 	// * media queries
 	@include respond(tab-port) {
-		top: 6rem;
 		border-top: 1px solid $color-grey-dark-3;
-	}
-
-	&__text-wrapper {
-		min-height: 100vh;
-		@include flexCenter;
 	}
 }

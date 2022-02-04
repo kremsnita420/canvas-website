@@ -15,7 +15,7 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
 
 1em =16px
 */
-.header__nav-list-link:hover {
+.header__nav-list-link:hover, .mobile-nav__list-item-link:hover {
   background: -webkit-linear-gradient(45deg, #fb6567, #ec008b);
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,7 +58,7 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
     left: 0; }
 
 .header-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
@@ -103,7 +103,29 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
     @media only screen and (max-width: 62.5em) {
       .header__nav-toggler {
         display: block;
-        cursor: pointer; } }
+        cursor: pointer;
+        padding: 1rem;
+        margin-right: 2rem; } }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  width: 100%; }
+  @media only screen and (max-width: 62.5em) {
+    .mobile-nav {
+      display: flex; } }
+  .mobile-nav__list {
+    list-style: none; }
+  .mobile-nav__list-item {
+    border-bottom: 1px solid #333; }
+  .mobile-nav__list-item-link {
+    display: block;
+    font-family: 'PT Serif', serif;
+    line-height: 2.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    padding: 1.4rem 0.5rem; }
 
 .row {
   max-width: 117rem;
@@ -119,10 +141,10 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
       max-width: 90rem; } }
   @media only screen and (max-width: 62.5em) {
     .row {
-      max-width: 70rem; } }
+      max-width: 73rem; } }
   @media only screen and (max-width: 37.5em) {
     .row {
-      max-width: 52rem; } }
+      max-width: 50rem; } }
   .row [class^='col-'] {
     float: left; }
     .row [class^='col-']:not(:last-child) {
@@ -133,7 +155,7 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
           margin-bottom: 6rem; } }
     @media only screen and (max-width: 62.5em) {
       .row [class^='col-'] {
-        width: 100% !important; } }
+        width: 100%; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -148,24 +170,17 @@ QUERIES ORDER: base + typography > general layout + grid > page layout > compone
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .section-hero {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   min-width: 100vw;
   min-height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(../../img/hero-2.jpg);
   background-size: cover;
   margin: auto;
-  background-position: top; }
+  background-position: top;
+  overflow-x: hidden; }
   @media only screen and (max-width: 62.5em) {
     .section-hero {
-      top: 6rem;
       border-top: 1px solid #333; } }
-  .section-hero__text-wrapper {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
 
 *,
 *::before,
