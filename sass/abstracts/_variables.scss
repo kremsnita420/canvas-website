@@ -1,0 +1,45 @@
+// !COLORS
+$color-primary-1: #ec008b;
+$color-primary-2: #f3317a;
+$color-primary-3: #fb6567;
+
+$color-gradient-pink: linear-gradient(
+	90deg,
+	$color-primary-3,
+	$color-primary-1
+);
+
+%linearPinkFont {
+	background: -webkit-linear-gradient(
+		45deg,
+		$color-primary-3,
+		$color-primary-1
+	);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+//! FONT
+$default-font-size: 1.4rem;
+
+// !GRID
+$grid-width-1: 52rem;
+$grid-width-2: 70rem;
+$grid-width-3: 90rem;
+$grid-width-4: 117rem;
+
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+
+$gutter-horizontal: 6rem;
